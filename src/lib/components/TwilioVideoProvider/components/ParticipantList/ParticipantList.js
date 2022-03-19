@@ -8,8 +8,7 @@ import useVideoContext from '../../contexts/useVideoContext';
 import Participant from '../Participant/Participant';
 import usePublications from '../../hooks/usePublications';
 
-
-export default function ParticipantList(props) {
+const ParticipantList = (props) => {
     const { mobile } = props;
 
     const { room } = useVideoContext();
@@ -85,4 +84,6 @@ export default function ParticipantList(props) {
         //     </div>
         // </aside>
     );
-}
+};
+
+export default ParticipantList;
