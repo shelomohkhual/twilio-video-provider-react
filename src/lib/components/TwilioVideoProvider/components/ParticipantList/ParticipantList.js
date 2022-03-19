@@ -19,7 +19,6 @@ export default function ParticipantList(props) {
     const screenShareParticipant = useScreenShareParticipant();
     const mainParticipant = useMainParticipant();
     const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
-
     if (participants.length === 0) return null; // Don't render this component if there are no remote participants.
     return (
         // <aside

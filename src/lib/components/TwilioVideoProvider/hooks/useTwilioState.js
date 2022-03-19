@@ -19,7 +19,7 @@ export default function AppStateProvider(props) {
   // const [settings, dispatchSetting] = useReducer(settingsReducer, initialSettings);
   const [roomType, setRoomType] = useState();
   let contextValue = {
-    accessToken: props.accessToken,
+    accessToken: props.accessToken || null,
     error,
     setError,
     isFetching,

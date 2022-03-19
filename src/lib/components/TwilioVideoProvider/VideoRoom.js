@@ -5,15 +5,12 @@ import ParticipantList from './components/ParticipantList/ParticipantList';
 import RoomHeading from './components/RoomHeading/RoomHeading';
 import UserActions from './components/UserActions/UserActions';
 import useVideoContext from './contexts/useVideoContext';
-import useRestartAudioTrackOnDeviceChange from './hooks/useRestartAudioTrackOnDeviceChange';
 
 const VideoRoom = props => {
     const {
-        localTracks,
         getAudioAndVideoTracks,
         room,
     } = useVideoContext();
-    useRestartAudioTrackOnDeviceChange(localTracks);
 
     const [mediaError, setMediaError] = useState();
 
@@ -33,11 +30,7 @@ const VideoRoom = props => {
 
         <div className={'mainContainer'}>
             {room && <RoomHeading />}
-            {!room && <LocalVideoPreview
-                localTracks={localTracks}
-                identity={'userName'}
-                user={'userName'}
-            />}
+            {!room && <LocalVideoPreview />}
 
             {room && <MainParticipant />}
             {room && <ParticipantList mobile />}

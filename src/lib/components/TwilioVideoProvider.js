@@ -18,15 +18,16 @@ const TwilioVideoProvider = props => {
             <VideoProvider onError={setError}>
                 <ErrorDialog dismissError={() => setError(null)} error={error} />
 
-                <VideoRoom {...props} />
+                {!props.hideVideoRoom && <VideoRoom {...props} />}
+
+                {props.children && props.children}
             </VideoProvider>
         </AppStateProvider>
     );
 };
 
 TwilioVideoProvider.propTypes = {
-    userName: PropTypes.string.isRequired,
-    accessToken: PropTypes.string.isRequired,
+    accessToken: PropTypes.string,
 };
 
 export default TwilioVideoProvider;

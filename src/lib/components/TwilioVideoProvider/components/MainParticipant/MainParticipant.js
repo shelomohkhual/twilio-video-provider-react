@@ -6,13 +6,18 @@ import useVideoContext from '../../contexts/useVideoContext';
 import useMainParticipant from '../../hooks/useMainParticipant';
 import MainParticipantInfo from '../MainParticipantInfo/MainParticipantInfo';
 import ParticipantTracks from '../ParticipantTracks/ParticipantTracks';
+import LocalVideoPreview from '../LocalVideoPreview/LocalVideoPreview';
 
-const MainParticipant = props => {
+const MainParticipant = _ => {
+
     const mainParticipant = useMainParticipant();
     const { room } = useVideoContext();
+
     const localParticipant = room?.localParticipant;
     const [selectedParticipant] = useSelectedParticipant();
     const screenShareParticipant = useScreenShareParticipant();
+
+    if (!mainParticipant) return <LocalVideoPreview />;
 
     const videoPriority =
         (mainParticipant === selectedParticipant || mainParticipant === screenShareParticipant) &&

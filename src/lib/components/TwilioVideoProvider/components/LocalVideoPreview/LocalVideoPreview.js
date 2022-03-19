@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 
 import '../../../TwilioVideoProvider';
 import VideoTrack from '../VideoTrack/VideoTrack';
+import useVideoContext from '../../contexts/useVideoContext';
+import useRestartAudioTrackOnDeviceChange from '../../hooks/useRestartAudioTrackOnDeviceChange';
 
-const LocalVideoPreview = props => {
-    const { localTracks, identity } = props;
+const LocalVideoPreview = _ => {
+    const {
+        localTracks,
+    } = useVideoContext();
+    useRestartAudioTrackOnDeviceChange(localTracks);
 
     const videoTrack = localTracks.find(
         track => !track.name.includes('screen') && track.kind === 'video'
     );
-
-    var str = identity;
-    var matches = str.match(/\b(\w)/g);
-    var acronym = matches.join('');
 
     return (
         <div className='mainVideoContainer' >
@@ -22,6 +23,7 @@ const LocalVideoPreview = props => {
                     videoTrack ? (
                         <VideoTrack track={videoTrack} isLocal />
                     ) : (<>
+                        Camera off
                         {/* <div className={'identityContainer'}>
                         <span className={identity}> */}
                         {/* <LocalAudioLevelIndicator />
@@ -30,7 +32,6 @@ const LocalVideoPreview = props => {
                         {/* {identity}
                         </span>
                     </div> */}
-                        <span className='avatarText'>{acronym}</span>
                     </>)}
             </div >
         </div >

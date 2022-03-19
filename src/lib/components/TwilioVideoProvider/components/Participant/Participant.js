@@ -11,6 +11,7 @@ export default function Participant({
     isLocalParticipant,
     hideParticipant,
 }) {
+    if (!participant) return;
     return (
         <ParticipantInfo
             participant={participant}

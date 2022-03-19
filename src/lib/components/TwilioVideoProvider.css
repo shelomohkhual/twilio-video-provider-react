@@ -14,11 +14,6 @@
     --padding     : 14px;
 }
 
-* {
-    box-sizing: border-box;
-    margin    : 0;
-}
-
 .participantsContainer.mobile {
     display: none;
 }
@@ -41,15 +36,9 @@
     border-bottom-right-radius: var(--borderRadius);
 }
 
-body {
+.videoRoom {
+    color     : var(--lightColor);
     background: var(--mainBgColor);
-
-    width : 100vw;
-    height: 100vh;
-}
-
-.main {
-    color: var(--lightColor);
 
     display       : flex;
     flex-direction: row;
@@ -260,23 +249,6 @@ body {
     .participantScroll>span {
         transform: rotate(0deg);
     }
-}
-
-.videoRoom {
-    color         : var(--lightColor);
-    display       : flex;
-    flex-direction: row;
-    padding       : 5px;
-    font-family   : 'Inter', sans-serif;
-    width         : 100%;
-    height        : 100%;
-    max-width     : 1200px;
-    max-height    : 800px;
-    margin        : auto;
-    position      : absolute;
-    top           : 50%;
-    left          : 50%;
-    transform     : translate(-50%, -50%);
 }
 
 .allParticipantsContainer {
