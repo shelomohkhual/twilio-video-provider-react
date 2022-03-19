@@ -1,0 +1,29 @@
+/* .avatarContainer {
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin         : 10px;
+} */
+
+.avatarText {
+    font-size : 100px;
+    color     : white;
+    text-align: center;
+}
+
+.oneParticipant {
+    margin          : 10px;
+    background-color: black;
+}
+
+.oneParticipantSelected {
+    margin          : 10px;
+    background-color: black;
+    border          : 2px solid lime;
+}
+
+.identity {
+    color: white;
+}

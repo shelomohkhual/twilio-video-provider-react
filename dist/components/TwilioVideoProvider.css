@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
+
+:root {
+    --mainBgColor     : #5b5b5b;
+    --componentBgColor: #383838;
+
+    --darkTextColor: #4f4f4f;
+    --lightColor   : #F2F2F2;
+    --dangerColor  : #ff5656;
+
+    --textColor: #F2F2F2;
+
+    --borderRadius: 14px;
+    --padding     : 14px;
+}
+
+.participantsContainer.mobile {
+    display: none;
+}
+
+.overlayGradientTop {
+    top: 0;
+
+    background             : rgb(0, 0, 0);
+    background             : linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 18%) 30%, rgb(0 0 0 / 34%) 55%, rgb(0 0 0 / 45%) 79%, rgb(0 0 0 / 40%) 100%);
+    border-top-left-radius : var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+.overlayGradientBottom {
+    bottom: 0;
+
+    background                : rgb(0, 0, 0);
+    background                : linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 18%) 30%, rgb(0 0 0 / 34%) 55%, rgb(0 0 0 / 45%) 79%, rgb(0 0 0 / 40%) 100%);
+    border-bottom-left-radius : var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+.videoRoom {
+    color     : var(--lightColor);
+    background: var(--mainBgColor);
+
+    display       : flex;
+    flex-direction: row;
+
+    padding    : 5px;
+    font-family: 'Inter', sans-serif;
+
+    width     : 100%;
+    height    : 100%;
+    max-width : 1200px;
+    max-height: 800px;
+
+    /* centering for wide screen */
+    margin   : auto;
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.headingContainer,
+.mainVideoContainer,
+.userVideoActionContainer,
+.participantVideoContainer,
+.participantScroll {
+    background: var(--componentBgColor);
+    margin    : 5px;
+
+    border-radius: var(--borderRadius);
+    overflow     : hidden;
+}
+
+.mainVideoContainer,
+.participantVideoContainer {
+    position: relative;
+}
+
+.participantsContainer {
+    width : 25%;
+    height: fit-content;
+
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+.participantVideoContainer {
+    height: 200px;
+    width : -webkit-fill-available;
+}
+
+.mainContainer {
+    /* width         : 70%; */
+    flex          : 1;
+    height        : 100%;
+    display       : flex;
+    flex-direction: column;
+}
+
+.participantScroll {
+    padding: var(--padding);
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    height: 40px;
+}
+
+.participantScroll {
+    height: 40px;
+    width : -webkit-fill-available;
+}
+
+.participantScroll>span {
+    transform: rotate(90deg);
+}
+
+.mainVideoWrapper>video,
+.participantVideoWrapper>video {
+    height: 100%;
+    width : 100%;
+}
+
+.mainVideoWrapper,
+.participantVideoWrapper {
+    margin: auto;
+    height: 100%;
+    width : 100%;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.headingContainer,
+.userVideoActionContainer {
+    height : 90px;
+    padding: var(--padding);
+
+    display    : flex;
+    align-items: center;
+}
+
+.roomTitle {
+    font-size    : 24px;
+    margin-bottom: 8px;
+
+    color: var(--textColor);
+}
+
+.roomDes {
+    font-size  : 16px;
+    font-weight: 200;
+
+    opacity: 0.5;
+    color  : var(--textColor);
+}
+
+.userVideoActionContainer {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.videoActionsContainer {
+    position: absolute;
+    z-index : 100;
+    width   : 100%;
+
+    padding: var(--padding);
+
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+.videoActionsContainer__actions {
+    display       : flex;
+    flex-direction: row;
+}
+
+.videoActionsContainer__actions-icon {
+    margin-left: 5px;
+
+    border-radius: 50px;
+    width        : 50px;
+    height       : 50px;
+}
+
+.videoActionsContainer__actions-container {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.videoActionsContainer__actions-label {
+    color    : var(--textColor);
+    font-size: 14px;
+
+    margin-top: 10px;
+}
+
+.mainVideoContainer {
+    height    : calc(100% - 180px);
+    min-height: 300px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.userVideoActionContainer {}
+
+/* Small tablets and large smartphones (landscape view) */
+@media only screen and (max-width:576px) {}
+
+/* Small tablets (portrait view */
+@media only screen and (max-width:768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .participantsContainer.desktop {
+        display: none;
+    }
+
+    .participantsContainer.mobile {
+        display: flex;
+
+        width         : 100%;
+        flex-direction: row;
+    }
+
+    .participantVideoContainer {
+        width : 200px;
+        height: 100px;
+    }
+
+
+    .participantScroll {
+        width : 40px;
+        height: 100px;
+        /*  participantVideoContainer height */
+    }
+
+    .participantScroll>span {
+        transform: rotate(0deg);
+    }
+}
+
+.allParticipantsContainer {
+    width  : 100%;
+    display: flex;
+}
+
+.participantContainer {
+    width           : 220px;
+    background-color: rgba(128, 128, 128, 0.178);
+}
+
+.primaryDisplayContainer {
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.screenShareBanner {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.roomContainer {
+    width          : 100%;
+    flex           : 1;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    max-height     : calc(100vh - 190px);
+    overflow       : hidden;
+}
+
+.menuBarContainer {
+    display         : flex;
+    justify-content : center;
+    background-color: #FFFFFF;
+    padding         : 20px;
+}
+
+.joinMeeting {
+    width        : 78px;
+    height       : 78px;
+    background   : #F0EFEF;
+    border-radius: 50%;
+    border       : none;
+    cursor       : pointer;
+    margin-right : 15px;
+}
+
+.endCall {
+    width        : 78px;
+    height       : 78px;
+    background   : #D81002;
+    border-radius: 50%;
+    border       : none;
+    cursor       : pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .allParticipantsContainer {
+        flex-direction: column-reverse;
+    }
+
+    .participantContainer {
+        display       : flex;
+        flex-direction: row;
+        width         : 100%;
+    }
+}
