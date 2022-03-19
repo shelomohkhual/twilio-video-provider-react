@@ -1,0 +1,35 @@
+.localVideoPreview {
+    width: 100%;
+}
+
+.innerContainer {
+    width          : 100%;
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+
+    align-items: center;
+}
+
+.identity {
+    font-size: 50px;
+}
+
+.avatarContainer {
+    background     : linear-gradient(180deg, #EB6214 0%, #F18701 100%);
+    box-shadow     : 0px 0px 4px #DADADA;
+    width          : 180px;
+    height         : 180px;
+    border-radius  : 50%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin         : 10px 20px 10px 20px;
+    margin-top     : 40px;
+}
+
+.avatarContainer>span {
+    font-size: 100px;
+    color    : white;
+}

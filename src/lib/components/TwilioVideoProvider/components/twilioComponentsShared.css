@@ -1,0 +1,31 @@
+.avatarContainer {
+    background     : linear-gradient(180deg, #EB6214 0%, #F18701 100%);
+    box-shadow     : 0px 0px 4px #DADADA;
+    width          : 180px;
+    height         : 180px;
+    border-radius  : 50%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin         : 10px;
+}
+
+.avatarContainer>span {
+    font-size: 100px;
+    color    : white;
+}
+
+.oneParticipant {
+    margin          : 10px;
+    background-color: black;
+}
+
+.oneParticipantSelected {
+    margin          : 10px;
+    background-color: black;
+    border          : 2px solid lime;
+}
+
+.identity {
+    color: white;
+}
