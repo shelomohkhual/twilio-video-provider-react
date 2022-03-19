@@ -19,23 +19,23 @@ const MainParticipant = props => {
             mainParticipant !== localParticipant
             ? 'high'
             : null;
-    return ( /* audio is disabled for this participant component because this participant's audio 
-    is already being rendered in the <ParticipantStrip /> component.  */
-        <MainParticipantInfo participant={mainParticipant}>
-            <ParticipantTracks
-                participant={mainParticipant}
-                videoOnly
-                enableScreenShare={mainParticipant !== localParticipant}
-                videoPriority={videoPriority}
-                isLocalParticipant={mainParticipant === localParticipant}
-            />
-        </MainParticipantInfo>);
 
-    // return (
-    //     <div id='primary-display-container'
-    //         style={{ width: '75%', backgroundColor: 'grey' }}>
-    //     </div>
-    // );
+    return (
+        /* audio is disabled for this participant component because this participant's audio
+   is already being rendered in the <ParticipantStrip /> component.  */
+        <div className='mainVideoContainer'>
+            <MainParticipantInfo participant={mainParticipant}>
+                <ParticipantTracks
+                    participant={mainParticipant}
+                    videoOnly
+                    // enableScreenShare={mainParticipant !== localParticipant}
+                    enableScreenShare
+                    videoPriority={videoPriority}
+                    isLocalParticipant={mainParticipant === localParticipant}
+                />
+            </MainParticipantInfo>
+        </div>
+    );
 };
 
 MainParticipant.propTypes = {};

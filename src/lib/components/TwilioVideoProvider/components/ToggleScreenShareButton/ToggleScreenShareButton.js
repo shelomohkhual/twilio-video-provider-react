@@ -7,9 +7,9 @@ import useVideoContext from '../../contexts/useVideoContext';
 // import stopShareScreen from '../../../../assets/twillio/stopShareScreen.svg';
 import './toggleShareScreenButton.css';
 
-export const SCREEN_SHARE_TEXT = 'ScreenShare';
+export const SCREEN_SHARE_TEXT = 'Screen';
 // export const SCREEN_SHARE_TEXT = <img src={shareScreen}></img>;
-export const STOP_SCREEN_SHARE_TEXT = 'Stop Sharing Screen';
+export const STOP_SCREEN_SHARE_TEXT = 'Stop';
 export const SHARE_IN_PROGRESS_TEXT = 'Cannot share screen when another user is sharing';
 export const SHARE_NOT_SUPPORTED_TEXT = 'Screen sharing is not supported with this browser';
 
@@ -38,27 +38,18 @@ export default function ToggleScreenShareButton({ hide, disabled, isSharingScree
     // isSharingScreen={ isSharingScreen} onStopSharing={toggleScreenShare} 
 
     return (
-        <div
-        //   title={tooltipMessage}
-        //   placement="top"
-        //   PopperProps={{ disablePortal: true }}
-        //   style={{ cursor: isDisabled ? 'not-allowed' : 'pointer' }}
-        >
-            <span>
-                {/* The span element is needed because a disabled button will not emit hover events and we want to display
-                a tooltip when screen sharing is disabled */}
-                <button
-                    className={'toggleShareScreen'}
-                    onClick={() => !isSharingScreen ? toggleScreenShare() : onStopSharing()}
-                // disabled={isDisabled}
-                // startIcon={<ScreenShareIcon />}
-                //   data-cy-share-screen
-                >
-                    {isSharingScreen && STOP_SCREEN_SHARE_TEXT}
-                    {!isSharingScreen && SCREEN_SHARE_TEXT}
+        <div className='videoActionsContainer__actions-container'>
+            <button
+                className={'videoActionsContainer__actions-icon'}
+                onClick={() => !isSharingScreen ? toggleScreenShare() : onStopSharing()}
+            >
+                {isSharingScreen && STOP_SCREEN_SHARE_TEXT}
+                {!isSharingScreen && SCREEN_SHARE_TEXT}
 
-                </button>
-            </span>
+            </button>
+            <p className='videoActionsContainer__actions-label'>
+                Screen Share
+            </p>
         </div>
     );
 }

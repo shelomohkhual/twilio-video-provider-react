@@ -35,51 +35,55 @@ export default function ParticipantInfo({
     var matches = str.match(/\b(\w)/g);
     var acronym = matches.join('');
 
+    if (isSelected) return null;
+
     return (
-        <div className={isSelected ? style.oneParticipantSelected : style.oneParticipant}
-            //   className={clsx(style.container, {
-            //     [style.hideParticipant]: hideParticipant,
-            //     [style.cursorPointer]: Boolean(onClick),
-            //   })}
-            onClick={onClick}
-        // data-cy-participant={participant.identity}
-        >
-            <div className={style.infoContainer}>
-                <NetworkQualityLevel participant={participant} />
-                <div className={style.infoRowBottom}>
-                    {isScreenShareEnabled && (
-                        <span className={style.screenShareIconContainer}>
-                            ScreenShareIcon
-                        </span>
-                    )}
-                    <span className={style.identity}>
-                        <AudioLevelIndicator audioTrack={audioTrack} />
-                        {participant.identity}
-                        {/* <p variant="body1" className={style.typeography} component="span">
+        <div className='participantVideoContainer'>
+            <div className={isSelected ? style.oneParticipantSelected : style.oneParticipant}
+                //   className={clsx(style.container, {
+                //     [style.hideParticipant]: hideParticipant,
+                //     [style.cursorPointer]: Boolean(onClick),
+                //   })}
+                onClick={onClick}
+                data-cy-participant={participant.identity}
+            >
+                <div className={style.infoContainer}>
+                    <NetworkQualityLevel participant={participant} />
+                    <div className={style.infoRowBottom}>
+                        {isScreenShareEnabled && (
+                            <span className={style.screenShareIconContainer}>
+                                ScreenShareIcon
+                            </span>
+                        )}
+                        <span className={style.identity}>
+                            <AudioLevelIndicator audioTrack={audioTrack} />
+                            {participant.identity}
+                            {/* <p variant="body1" className={style.typeography} component="span">
                             {participant.identity}
                             {isLocalParticipant && ' (You)'}
                         </p> */}
-                    </span>
+                        </span>
+                    </div>
+                    {/* <div>{isSelected &&< <PinIcon />}</div> */}
+                    {/* <div>{isSelected && <p>PinIcon</p>}</div> */}
                 </div>
-                {/* <div>{isSelected &&< <PinIcon />}</div> */}
-                {/* <div>{isSelected && <p>PinIcon</p>}</div> */}
-            </div>
-            <div className={style.innerContainer}>
-                {(!isVideoEnabled || isVideoSwitchedOff) && (
-                    <div>
-                        <div className={style.avatarContainer}>
-                            <span>{acronym}</span>
+                <div className={style.innerContainer}>
+                    {(!isVideoEnabled || isVideoSwitchedOff) && (
+                        <div>
+                            <div className={style.avatarContainer}>
+                                <span>{acronym}</span>
+                            </div>
                         </div>
-                    </div>
-                )}
-                {isParticipantReconnecting && (
-                    <div className={style.reconnectingContainer}>
-                        <p variant="body1" className={style.typeography}>
-                            Reconnecting...
-                        </p>
-                    </div>
-                )}
-                {children}
+                    )}
+                    {isParticipantReconnecting && (
+                        <div className={style.reconnectingContainer}>
+                            <p variant="body1" className={style.typeography}>
+                                Reconnecting...
+                            </p>
+                        </div>
+                    )}
+                    {children}
+                </div>
             </div>
         </div>
     );

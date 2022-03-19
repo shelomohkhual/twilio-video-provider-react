@@ -6,9 +6,12 @@ import useScreenShareParticipant from '../../hooks/useScreenShareParticipant';
 import useSelectedParticipant from '../../contexts/SelectedParticipantProvider';
 import useVideoContext from '../../contexts/useVideoContext';
 import Participant from '../Participant/Participant';
+import usePublications from '../../hooks/usePublications';
 
 
-export default function ParticipantList() {
+export default function ParticipantList(props) {
+    const { mobile } = props;
+
     const { room } = useVideoContext();
     const localParticipant = room?.localParticipant;
     const participants = useParticipants();
@@ -18,7 +21,6 @@ export default function ParticipantList() {
     const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
 
     if (participants.length === 0) return null; // Don't render this component if there are no remote participants.
-
     return (
         // <aside
         //     //   className={clsx(style.container, {
@@ -54,28 +56,32 @@ export default function ParticipantList() {
         // display: 'flex',
         // }
         // }}>
-        <>
+        <div className={`participantsContainer ${mobile ? 'mobile' : 'desktop'}`}>
             <Participant
                 participant={localParticipant}
                 isLocalParticipant={true}
-                isSelected={localParticipant === selectedParticipant}
+                isSelected={false}
+                // isSelected={localParticipant === selectedParticipant}
                 onClick={() => setSelectedParticipant(localParticipant)}
             />
             {participants.map(participant => {
-                const isSelected = participant === selectedParticipant;
-                const hideParticipant =
-                    participant === mainParticipant && participant !== screenShareParticipant && !isSelected;
-                return (
-                    <Participant
-                        key={participant.sid}
-                        participant={participant}
-                        isSelected={isSelected}
-                        onClick={() => setSelectedParticipant(participant)}
-                        hideParticipant={hideParticipant}
-                    />
+                const isSelected = false;
+                // participant === selectedParticipant;
+                const hideParticipant = false;
+                // participant === mainParticipant
+                // && participant !== screenShareParticipant && !isSelected;
+
+                return (<Participant
+                    enableScreenShare
+                    key={participant.sid}
+                    participant={participant}
+                    isSelected={isSelected}
+                    onClick={() => setSelectedParticipant(participant)}
+                    hideParticipant={hideParticipant}
+                />
                 );
             })}
-        </>
+        </div>
         // </div>
         //     </div>
         // </aside>

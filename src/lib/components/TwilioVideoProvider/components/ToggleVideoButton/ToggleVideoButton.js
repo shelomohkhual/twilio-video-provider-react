@@ -5,7 +5,7 @@ import useLocalVideoToggle from '../../hooks/useLocalVideoToggle';
 // import videoOff from '../../../../assets/twillio/videoOff.svg'
 import './toggleVideoButton.css';
 
-export default function ToggleVideoButton({ disabled, className = 'toggleVideoButton' }) {
+export default function ToggleVideoButton({ disabled }) {
     const [isVideoEnabled, toggleVideoEnabled] = useLocalVideoToggle();
     const lastClickTimeRef = useRef(0);
     const { hasVideoInputDevices } = useDevices();
@@ -17,9 +17,9 @@ export default function ToggleVideoButton({ disabled, className = 'toggleVideoBu
         }
     }, [toggleVideoEnabled]);
 
-    return (
+    return (<div className='videoActionsContainer__actions-container'>
         <button
-            className={className}
+            className={"videoActionsContainer__actions-icon"}
             onClick={toggleVideo}
             disabled={!hasVideoInputDevices || disabled}
         // startIcon={isVideoEnabled ? <>VideoOnIcon</> : <>VideoOnIcon</>}
@@ -28,5 +28,9 @@ export default function ToggleVideoButton({ disabled, className = 'toggleVideoBu
             {/* {isVideoEnabled ? <img src={videoOn}></img> : <img src={videoOff}></img>} */}
             {/* {!hasVideoInputDevices ? 'No Video' : isVideoEnabled ? ' Video' : 'Start Video'} */}
         </button>
+        <p className='videoActionsContainer__actions-label'>
+            Screen Share
+        </p>
+    </div>
     );
 }

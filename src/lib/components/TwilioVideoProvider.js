@@ -14,7 +14,7 @@ export const Steps = {
 const TwilioVideoProvider = props => {
     const [error, setError] = useState();
     return (
-        <AppStateProvider>
+        <AppStateProvider {...props}>
             <VideoProvider onError={setError}>
                 <ErrorDialog dismissError={() => setError(null)} error={error} />
 

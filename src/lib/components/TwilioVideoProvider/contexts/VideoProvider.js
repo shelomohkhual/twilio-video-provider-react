@@ -18,7 +18,7 @@ import { SelectedParticipantProvider } from './SelectedParticipantProvider';
 
 export const VideoContext = createContext();
 
-export function VideoProvider({ options, children, onError = () => {} }) {
+export function VideoProvider({ options, children, onError = () => { } }) {
   const onErrorCallback = useCallback(
     error => {
       console.log(`ERROR: ${error.message}`, error);
@@ -53,9 +53,8 @@ export function VideoProvider({ options, children, onError = () => {} }) {
   useRestartAudioTrackOnDeviceChange(localTracks);
 
   const [isBackgroundSelectionOpen, setIsBackgroundSelectionOpen] = useState(false);
-  const videoTrack = localTracks.find(track => !track.name.includes('screen') && track.kind === 'video')
-//   const [backgroundSettings, setBackgroundSettings] = useBackgroundSettings(videoTrack, room);
-
+  // const videoTrack = localTracks.find(track => !track.name.includes('screen') && track.kind === 'video');
+  //   const [backgroundSettings, setBackgroundSettings] = useBackgroundSettings(videoTrack, room);
   return (
     <VideoContext.Provider
       value={{

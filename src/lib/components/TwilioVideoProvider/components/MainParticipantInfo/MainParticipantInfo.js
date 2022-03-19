@@ -51,11 +51,11 @@ export default function MainParticipantInfo({ participant, children }) {
         <div style={{ display: 'flex' }}>
           <div className={'identity'}>
             {/* <AudioLevelIndicator audioTrack={audioTrack} /> */}
-            {/* <p >
+            <p >
               {participant.identity}
               {isLocal && ' (You)'}
               {screenSharePublication && ' - Screen'}
-            </p> */}
+            </p>
           </div>
           {/* <NetworkQualityLevel participant={participant} /> */}
         </div>
@@ -73,13 +73,9 @@ export default function MainParticipantInfo({ participant, children }) {
           </Tooltip>
         )} */}
       </div>
-      {(!isVideoEnabled || isVideoSwitchedOff) && (
-        <div>
-          <div className={'avatarContainer'}>
-            <span>{acronym}</span>
-          </div>
-        </div>
-      )}
+
+
+
       {isParticipantReconnecting && (
         <div className={'reconnectingContainer'}>
           <p variant="body1" style={{ color: 'white' }}>
@@ -87,7 +83,15 @@ export default function MainParticipantInfo({ participant, children }) {
           </p>
         </div>
       )}
-      {children}
+
+      {(!isVideoEnabled || isVideoSwitchedOff) && (
+        <span className='avatarText'>{acronym}</span>
+      )}
+
+      <div className='mainVideoWrapper'>
+        {children}
+      </div>
+
     </div>
   );
 }

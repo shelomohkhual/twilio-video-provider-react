@@ -18,8 +18,8 @@ export default function AppStateProvider(props) {
   const [activeSinkId, setActiveSinkId] = useActiveSinkId();
   // const [settings, dispatchSetting] = useReducer(settingsReducer, initialSettings);
   const [roomType, setRoomType] = useState();
-
   let contextValue = {
+    accessToken: props.accessToken,
     error,
     setError,
     isFetching,
