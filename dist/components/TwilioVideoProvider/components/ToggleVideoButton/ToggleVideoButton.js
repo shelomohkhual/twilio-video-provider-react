@@ -15,6 +15,8 @@ var _useLocalVideoToggle = _interopRequireDefault(require("../../hooks/useLocalV
 
 require("./toggleVideoButton.css");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -38,14 +40,17 @@ function ToggleVideoButton(_ref) {
       toggleVideoEnabled();
     }
   }, [toggleVideoEnabled]);
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions-container"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "videoActionsContainer__actions-icon",
-    onClick: toggleVideo,
-    disabled: !hasVideoInputDevices || disabled // startIcon={isVideoEnabled ? <>VideoOnIcon</> : <>VideoOnIcon</>}
-
-  }, isVideoEnabled ? 'videoOn' : 'videoOff'), /*#__PURE__*/_react.default.createElement("p", {
-    className: "videoActionsContainer__actions-label"
-  }, "Screen Share"));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: "videoActionsContainer__actions-container",
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+      className: "videoActionsContainer__actions-icon",
+      onClick: toggleVideo,
+      disabled: !hasVideoInputDevices || disabled // startIcon={isVideoEnabled ? <>VideoOnIcon</> : <>VideoOnIcon</>}
+      ,
+      children: isVideoEnabled ? 'videoOn' : 'videoOff'
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+      className: "videoActionsContainer__actions-label",
+      children: "Screen Share"
+    })]
+  });
 }

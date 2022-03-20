@@ -14,6 +14,8 @@ var _useVideoContext = _interopRequireDefault(require("../../contexts/useVideoCo
 
 require("./toggleShareScreenButton.css");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import shareScreen from '../../../../assets/twillio/shareScreen.svg';
@@ -45,7 +47,7 @@ function ToggleScreenShareButton(_ref) {
   let tooltipMessage = '';
 
   if (hide) {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
+    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
   }
 
   if (disableScreenShareButton) {
@@ -57,12 +59,15 @@ function ToggleScreenShareButton(_ref) {
   } // isSharingScreen={ isSharingScreen} onStopSharing={toggleScreenShare} 
 
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions-container"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: 'videoActionsContainer__actions-icon',
-    onClick: () => !isSharingScreen ? toggleScreenShare() : onStopSharing()
-  }, isSharingScreen && STOP_SCREEN_SHARE_TEXT, !isSharingScreen && SCREEN_SHARE_TEXT), /*#__PURE__*/_react.default.createElement("p", {
-    className: "videoActionsContainer__actions-label"
-  }, "Screen Share"));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: "videoActionsContainer__actions-container",
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
+      className: 'videoActionsContainer__actions-icon',
+      onClick: () => !isSharingScreen ? toggleScreenShare() : onStopSharing(),
+      children: [isSharingScreen && STOP_SCREEN_SHARE_TEXT, !isSharingScreen && SCREEN_SHARE_TEXT]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+      className: "videoActionsContainer__actions-label",
+      children: "Screen Share"
+    })]
+  });
 }

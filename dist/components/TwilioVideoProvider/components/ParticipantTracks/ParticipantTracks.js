@@ -13,6 +13,8 @@ var _usePublications = _interopRequireDefault(require("../../hooks/usePublicatio
 
 var _Publication = _interopRequireDefault(require("../Publication/Publication"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*
@@ -42,12 +44,13 @@ function ParticipantTracks(_ref) {
     filteredPublications = publications.filter(p => !p.trackName.includes('screen'));
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, filteredPublications.map(publication => /*#__PURE__*/_react.default.createElement(_Publication.default, {
-    key: publication.kind,
-    publication: publication,
-    participant: participant,
-    isLocalParticipant: isLocalParticipant,
-    videoOnly: videoOnly,
-    videoPriority: videoPriority
-  })));
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    children: filteredPublications.map(publication => /*#__PURE__*/(0, _jsxRuntime.jsx)(_Publication.default, {
+      publication: publication,
+      participant: participant,
+      isLocalParticipant: isLocalParticipant,
+      videoOnly: videoOnly,
+      videoPriority: videoPriority
+    }, publication.kind))
+  });
 }

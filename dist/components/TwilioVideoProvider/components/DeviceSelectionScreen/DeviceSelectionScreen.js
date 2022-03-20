@@ -25,6 +25,8 @@ var _useChatContext = _interopRequireDefault(require("../../../hooks/useChatCont
 
 var _useVideoContext = _interopRequireDefault(require("../../../hooks/useVideoContext/useVideoContext"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const style = {};
@@ -60,77 +62,101 @@ function wDeviceSelectionScreen(_ref) {
   };
 
   if (isFetching || isConnecting) {
-    return /*#__PURE__*/_react.default.createElement("div", {
+    return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
       style: {
         height: '100%',
         justifyContent: "center",
         alignItems: "center",
         direction: "column"
-      }
-    }, /*#__PURE__*/_react.default.createElement("div", null, "Loading..."), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
-      variant: "body2",
-      style: {
-        fontWeight: 'bold',
-        fontSize: '16px'
-      }
-    }, "Joining Meeting")));
+      },
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        children: "Loading..."
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)("h3", {
+          variant: "body2",
+          style: {
+            fontWeight: 'bold',
+            fontSize: '16px'
+          },
+          children: "Joining Meeting"
+        })
+      })]
+    });
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", {
-    variant: "h5",
-    className: style.gutterBottom
-  }, "Join ", roomName), /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      justifyContent: "center"
-    }
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    item: true,
-    md: 7,
-    sm: 12,
-    xs: 12
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: style.localPreviewContainer
-  }, /*#__PURE__*/_react.default.createElement(_LocalVideoPreview.default, {
-    identity: name
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: style.mobileButtonBar
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_ToggleAudioButton.default, {
-    className: style.mobileButton,
-    disabled: disableButtons
-  }), /*#__PURE__*/_react.default.createElement(_ToggleVideoButton.default, {
-    className: style.mobileButton,
-    disabled: disableButtons
-  })), /*#__PURE__*/_react.default.createElement(_SettingsMenu.default, {
-    mobileButtonClass: style.mobileButton
-  }))), /*#__PURE__*/_react.default.createElement("div", {
-    item: true,
-    md: 5,
-    sm: 12,
-    xs: 12
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    container: true,
-    direction: "column",
-    justifyContent: "space-between",
-    style: {
-      height: '100%'
-    }
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_ToggleAudioButton.default, {
-    className: style.deviceButton,
-    disabled: disableButtons
-  }), /*#__PURE__*/_react.default.createElement(_ToggleVideoButton.default, {
-    className: style.deviceButton,
-    disabled: disableButtons
-  }))), /*#__PURE__*/_react.default.createElement("div", {
-    className: style.joinButtons
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    variant: "outlined",
-    color: "primary",
-    onClick: () => setStep(_PreJoinScreens.Steps.roomNameStep)
-  }, "Cancel"), /*#__PURE__*/_react.default.createElement("button", {
-    variant: "contained",
-    color: "primary",
-    "data-cy-join-now": true,
-    onClick: handleJoin,
-    disabled: disableButtons
-  }, "Join Now"))))));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("h3", {
+      variant: "h5",
+      className: style.gutterBottom,
+      children: ["Join ", roomName]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      style: {
+        justifyContent: "center"
+      },
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        item: true,
+        md: 7,
+        sm: 12,
+        xs: 12,
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          className: style.localPreviewContainer,
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_LocalVideoPreview.default, {
+            identity: name
+          })
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: style.mobileButtonBar,
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleAudioButton.default, {
+              className: style.mobileButton,
+              disabled: disableButtons
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleVideoButton.default, {
+              className: style.mobileButton,
+              disabled: disableButtons
+            })]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_SettingsMenu.default, {
+            mobileButtonClass: style.mobileButton
+          })]
+        })]
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        item: true,
+        md: 5,
+        sm: 12,
+        xs: 12,
+        children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          container: true,
+          direction: "column",
+          justifyContent: "space-between",
+          style: {
+            height: '100%'
+          },
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+            children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+              children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleAudioButton.default, {
+                className: style.deviceButton,
+                disabled: disableButtons
+              }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleVideoButton.default, {
+                className: style.deviceButton,
+                disabled: disableButtons
+              })]
+            })
+          }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+            className: style.joinButtons,
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+              variant: "outlined",
+              color: "primary",
+              onClick: () => setStep(_PreJoinScreens.Steps.roomNameStep),
+              children: "Cancel"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+              variant: "contained",
+              color: "primary",
+              "data-cy-join-now": true,
+              onClick: handleJoin,
+              disabled: disableButtons,
+              children: "Join Now"
+            })]
+          })]
+        })
+      })]
+    })]
+  });
 }

@@ -23,6 +23,8 @@ require("../../../TwilioVideoProvider.css");
 
 var _useTwilioState = require("../../hooks/useTwilioState");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const UserActions = props => {
@@ -47,36 +49,44 @@ const UserActions = props => {
     room === null || room === void 0 ? void 0 : room.disconnect();
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "userVideoActionContainer"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions"
-  }, /*#__PURE__*/_react.default.createElement(_ToggleAudioButton.default, {
-    disabled: isReconnecting
-  }), /*#__PURE__*/_react.default.createElement(_ToggleVideoButton.default, {
-    disabled: isReconnecting
-  }), /*#__PURE__*/_react.default.createElement(_ToggleScreenShareButton.default, {
-    disabled: isReconnecting,
-    hide: !room,
-    isSharingScreen: isSharingScreen,
-    onStopSharing: toggleScreenShare
-  }), !room && /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions-container"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: 'videoActionsContainer__actions-icon',
-    onClick: handleOnJoin,
-    disabled: isConnecting || isReconnecting
-  }, "Room"), /*#__PURE__*/_react.default.createElement("p", {
-    className: "videoActionsContainer__actions-label"
-  }, "Join Room")), room && /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions-container"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: 'videoActionsContainer__actions-icon',
-    onClick: onEndCall,
-    disabled: isConnecting
-  }, "End"), /*#__PURE__*/_react.default.createElement("p", {
-    className: "videoActionsContainer__actions-label"
-  }, "End Call"))));
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+    className: "userVideoActionContainer",
+    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: "videoActionsContainer__actions",
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleAudioButton.default, {
+        disabled: isReconnecting
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleVideoButton.default, {
+        disabled: isReconnecting
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ToggleScreenShareButton.default, {
+        disabled: isReconnecting,
+        hide: !room,
+        isSharingScreen: isSharingScreen,
+        onStopSharing: toggleScreenShare
+      }), !room && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "videoActionsContainer__actions-container",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+          className: 'videoActionsContainer__actions-icon',
+          onClick: handleOnJoin,
+          disabled: isConnecting || isReconnecting,
+          children: "Room"
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+          className: "videoActionsContainer__actions-label",
+          children: "Join Room"
+        })]
+      }), room && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "videoActionsContainer__actions-container",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+          className: 'videoActionsContainer__actions-icon',
+          onClick: onEndCall,
+          disabled: isConnecting,
+          children: "End"
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+          className: "videoActionsContainer__actions-label",
+          children: "End Call"
+        })]
+      })]
+    })
+  });
 };
 
 UserActions.propTypes = {};

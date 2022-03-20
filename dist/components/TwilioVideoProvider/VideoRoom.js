@@ -21,6 +21,8 @@ var _UserActions = _interopRequireDefault(require("./components/UserActions/User
 
 var _useVideoContext = _interopRequireDefault(require("./contexts/useVideoContext"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const VideoRoom = props => {
@@ -38,13 +40,15 @@ const VideoRoom = props => {
       });
     }
   }, [getAudioAndVideoTracks, mediaError]);
-  return /*#__PURE__*/React.createElement("div", {
-    className: 'videoRoom'
-  }, room && /*#__PURE__*/React.createElement(_ParticipantList.default, null), /*#__PURE__*/React.createElement("div", {
-    className: 'mainContainer'
-  }, room && /*#__PURE__*/React.createElement(_RoomHeading.default, null), !room && /*#__PURE__*/React.createElement(_LocalVideoPreview.default, null), room && /*#__PURE__*/React.createElement(_MainParticipant.default, null), room && /*#__PURE__*/React.createElement(_ParticipantList.default, {
-    mobile: true
-  }), /*#__PURE__*/React.createElement(_UserActions.default, null)));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: 'videoRoom',
+    children: [room && /*#__PURE__*/(0, _jsxRuntime.jsx)(_ParticipantList.default, {}), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: 'mainContainer',
+      children: [room && /*#__PURE__*/(0, _jsxRuntime.jsx)(_RoomHeading.default, {}), !room && /*#__PURE__*/(0, _jsxRuntime.jsx)(_LocalVideoPreview.default, {}), room && /*#__PURE__*/(0, _jsxRuntime.jsx)(_MainParticipant.default, {}), room && /*#__PURE__*/(0, _jsxRuntime.jsx)(_ParticipantList.default, {
+        mobile: true
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_UserActions.default, {})]
+    })]
+  });
 };
 
 var _default = VideoRoom;

@@ -13,6 +13,8 @@ var _useLocalAudioToggle = _interopRequireDefault(require("../../hooks/useLocalA
 
 var _useVideoContext = _interopRequireDefault(require("../../contexts/useVideoContext"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import micIcon from '../../../../assets/twillio/micIcon.svg'
@@ -26,13 +28,20 @@ function ToggleAudioButton(_ref) {
     localTracks
   } = (0, _useVideoContext.default)();
   const hasAudioTrack = localTracks.some(track => track.kind === 'audio');
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "videoActionsContainer__actions-container"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "videoActionsContainer__actions-icon",
-    onClick: toggleAudioEnabled,
-    disabled: !hasAudioTrack || disabled
-  }, isAudioEnabled ? /*#__PURE__*/_react.default.createElement("p", null, "Mic") : /*#__PURE__*/_react.default.createElement("p", null, "unmic")), /*#__PURE__*/_react.default.createElement("p", {
-    className: "videoActionsContainer__actions-label"
-  }, "Mic"));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: "videoActionsContainer__actions-container",
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+      className: "videoActionsContainer__actions-icon",
+      onClick: toggleAudioEnabled,
+      disabled: !hasAudioTrack || disabled,
+      children: isAudioEnabled ? /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+        children: "Mic"
+      }) : /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+        children: "unmic"
+      })
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+      className: "videoActionsContainer__actions-label",
+      children: "Mic"
+    })]
+  });
 }

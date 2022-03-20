@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // This function is used to provide error messages to the user that are
@@ -37,27 +39,41 @@ function ErrorDialog(_ref) {
   const enhancedMessage = enhanceMessage(message, code);
 
   if (!error) {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
+    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     style: {
       position: 'absolute',
       zIndex: '1000',
       background: 'white',
       width: ' 100%',
       textAlign: 'center'
-    }
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "ERROR"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, enhancedMessage), Boolean(code) && /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, "Error Code: ", code))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    style: {
-      borderRadius: '20px',
-      width: '100px',
-      margin: '10px'
     },
-    onClick: () => dismissError(),
-    color: "primary",
-    autoFocus: true
-  }, "OK")));
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
+      children: "ERROR"
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+        children: enhancedMessage
+      }), Boolean(code) && /*#__PURE__*/(0, _jsxRuntime.jsx)("pre", {
+        children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("code", {
+          children: ["Error Code: ", code]
+        })
+      })]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        style: {
+          borderRadius: '20px',
+          width: '100px',
+          margin: '10px'
+        },
+        onClick: () => dismissError(),
+        color: "primary",
+        autoFocus: true,
+        children: "OK"
+      })
+    })]
+  });
 }
 
 var _default = ErrorDialog;

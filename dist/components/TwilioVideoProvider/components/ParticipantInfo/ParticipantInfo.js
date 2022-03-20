@@ -27,6 +27,8 @@ var _NetworkQualityLevel = _interopRequireDefault(require("../NetworkQualityLeve
 
 var _twilioComponentsShared = _interopRequireDefault(require("../twilioComponentsShared.css"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import clsx from 'clsx';
@@ -52,36 +54,50 @@ function ParticipantInfo(_ref) {
   var matches = str.match(/\b(\w)/g);
   var acronym = matches.join('');
   if (isSelected) return null;
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "participantVideoContainer"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: isSelected ? _twilioComponentsShared.default.oneParticipantSelected : _twilioComponentsShared.default.oneParticipant //   className={clsx(style.container, {
-    //     [style.hideParticipant]: hideParticipant,
-    //     [style.cursorPointer]: Boolean(onClick),
-    //   })}
-    ,
-    onClick: onClick,
-    "data-cy-participant": participant.identity
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: _twilioComponentsShared.default.infoContainer
-  }, /*#__PURE__*/_react.default.createElement(_NetworkQualityLevel.default, {
-    participant: participant
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: _twilioComponentsShared.default.infoRowBottom
-  }, isScreenShareEnabled && /*#__PURE__*/_react.default.createElement("span", {
-    className: _twilioComponentsShared.default.screenShareIconContainer
-  }, "ScreenShareIcon"), /*#__PURE__*/_react.default.createElement("span", {
-    className: _twilioComponentsShared.default.identity
-  }, /*#__PURE__*/_react.default.createElement(_AudioLevelIndicator.default, {
-    audioTrack: audioTrack
-  }), participant.identity))), /*#__PURE__*/_react.default.createElement("div", {
-    className: _twilioComponentsShared.default.innerContainer
-  }, (!isVideoEnabled || isVideoSwitchedOff) && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: _twilioComponentsShared.default.avatarContainer
-  }, /*#__PURE__*/_react.default.createElement("span", null, acronym))), isParticipantReconnecting && /*#__PURE__*/_react.default.createElement("div", {
-    className: _twilioComponentsShared.default.reconnectingContainer
-  }, /*#__PURE__*/_react.default.createElement("p", {
-    variant: "body1",
-    className: _twilioComponentsShared.default.typeography
-  }, "Reconnecting...")), children)));
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+    className: "participantVideoContainer",
+    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: isSelected ? _twilioComponentsShared.default.oneParticipantSelected : _twilioComponentsShared.default.oneParticipant //   className={clsx(style.container, {
+      //     [style.hideParticipant]: hideParticipant,
+      //     [style.cursorPointer]: Boolean(onClick),
+      //   })}
+      ,
+      onClick: onClick,
+      "data-cy-participant": participant.identity,
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: _twilioComponentsShared.default.infoContainer,
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_NetworkQualityLevel.default, {
+          participant: participant
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: _twilioComponentsShared.default.infoRowBottom,
+          children: [isScreenShareEnabled && /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+            className: _twilioComponentsShared.default.screenShareIconContainer,
+            children: "ScreenShareIcon"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("span", {
+            className: _twilioComponentsShared.default.identity,
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_AudioLevelIndicator.default, {
+              audioTrack: audioTrack
+            }), participant.identity]
+          })]
+        })]
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: _twilioComponentsShared.default.innerContainer,
+        children: [(!isVideoEnabled || isVideoSwitchedOff) && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+            className: _twilioComponentsShared.default.avatarContainer,
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+              children: acronym
+            })
+          })
+        }), isParticipantReconnecting && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          className: _twilioComponentsShared.default.reconnectingContainer,
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+            variant: "body1",
+            className: _twilioComponentsShared.default.typeography,
+            children: "Reconnecting..."
+          })
+        }), children]
+      })]
+    })
+  });
 }

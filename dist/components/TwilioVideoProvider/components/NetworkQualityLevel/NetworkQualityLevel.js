@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _useParticipantNetworkQualityLevel = _interopRequireDefault(require("../../hooks/useParticipantNetworkQualityLevel"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const style = {};
@@ -21,7 +23,7 @@ function NetworkQualityLevel(_ref) {
   } = _ref;
   const networkQualityLevel = (0, _useParticipantNetworkQualityLevel.default)(participant);
   if (networkQualityLevel === null) return null;
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
     className: style.outerContainer,
     style: {
       width: '2em',
@@ -31,25 +33,26 @@ function NetworkQualityLevel(_ref) {
       alignItems: 'center',
       justifyContent: 'center',
       background: 'rgba(0, 0, 0, 0.5)'
-    }
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: style.innerContainer,
-    style: {
-      display: 'flex',
-      alignItems: 'flex-end',
-      '& div': {
-        width: '2px',
-        marginRight: '1px',
-        '&:not(:last-child)': {
-          borderRight: 'none'
+    },
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: style.innerContainer,
+      style: {
+        display: 'flex',
+        alignItems: 'flex-end',
+        '& div': {
+          width: '2px',
+          marginRight: '1px',
+          '&:not(:last-child)': {
+            borderRight: 'none'
+          }
         }
-      }
-    }
-  }, BARS_ARRAY.map(level => /*#__PURE__*/_react.default.createElement("div", {
-    key: level,
-    style: {
-      height: "".concat(STEP * (level + 1), "px"),
-      background: networkQualityLevel > level ? 'white' : 'rgba(255, 255, 255, 0.2)'
-    }
-  }))));
+      },
+      children: BARS_ARRAY.map(level => /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        style: {
+          height: "".concat(STEP * (level + 1), "px"),
+          background: networkQualityLevel > level ? 'white' : 'rgba(255, 255, 255, 0.2)'
+        }
+      }, level))
+    })
+  });
 }

@@ -13,6 +13,8 @@ var _useVideoContext = _interopRequireDefault(require("../../contexts/useVideoCo
 
 require("../../../TwilioVideoProvider.css");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const RoomHeading = props => {
@@ -20,11 +22,13 @@ const RoomHeading = props => {
     room
   } = (0, _useVideoContext.default)();
   const title = room.name || '';
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "headingContainer"
-  }, /*#__PURE__*/_react.default.createElement("strong", {
-    className: "roomTitle"
-  }, title));
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+    className: "headingContainer",
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)("strong", {
+      className: "roomTitle",
+      children: title
+    })
+  });
 };
 
 RoomHeading.propTypes = {};

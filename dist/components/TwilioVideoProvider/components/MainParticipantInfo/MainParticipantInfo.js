@@ -25,6 +25,8 @@ var _useParticipantIsReconnecting = _interopRequireDefault(require("../../hooks/
 
 require("../twilioComponentsShared.css");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import clsx from 'clsx';
@@ -57,24 +59,35 @@ function MainParticipantInfo(_ref) {
   var str = participant.identity;
   var matches = str.match(/\b(\w)/g);
   var acronym = matches.join('');
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: 'infoContainer'
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      display: 'flex'
-    }
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: 'identity'
-  }, /*#__PURE__*/_react.default.createElement("p", null, participant.identity, isLocal && ' (You)', screenSharePublication && ' - Screen')))), isParticipantReconnecting && /*#__PURE__*/_react.default.createElement("div", {
-    className: 'reconnectingContainer'
-  }, /*#__PURE__*/_react.default.createElement("p", {
-    variant: "body1",
-    style: {
-      color: 'white'
-    }
-  }, "Reconnecting...")), (!isVideoEnabled || isVideoSwitchedOff) && /*#__PURE__*/_react.default.createElement("span", {
-    className: "avatarText"
-  }, acronym), /*#__PURE__*/_react.default.createElement("div", {
-    className: "mainVideoWrapper"
-  }, children));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: 'infoContainer',
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        style: {
+          display: 'flex'
+        },
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          className: 'identity',
+          children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+            children: [participant.identity, isLocal && ' (You)', screenSharePublication && ' - Screen']
+          })
+        })
+      })
+    }), isParticipantReconnecting && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: 'reconnectingContainer',
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+        variant: "body1",
+        style: {
+          color: 'white'
+        },
+        children: "Reconnecting..."
+      })
+    }), (!isVideoEnabled || isVideoSwitchedOff) && /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+      className: "avatarText",
+      children: acronym
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: "mainVideoWrapper",
+      children: children
+    })]
+  });
 }

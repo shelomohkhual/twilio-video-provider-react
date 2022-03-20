@@ -19,6 +19,8 @@ var _useVideoContext = _interopRequireDefault(require("../../contexts/useVideoCo
 
 var _useRestartAudioTrackOnDeviceChange = _interopRequireDefault(require("../../hooks/useRestartAudioTrackOnDeviceChange"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const LocalVideoPreview = _ => {
@@ -27,14 +29,18 @@ const LocalVideoPreview = _ => {
   } = (0, _useVideoContext.default)();
   (0, _useRestartAudioTrackOnDeviceChange.default)(localTracks);
   const videoTrack = localTracks.find(track => !track.name.includes('screen') && track.kind === 'video');
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "mainVideoContainer"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "mainVideoWrapper"
-  }, videoTrack ? /*#__PURE__*/_react.default.createElement(_VideoTrack.default, {
-    track: videoTrack,
-    isLocal: true
-  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "Camera off")));
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+    className: "mainVideoContainer",
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: "mainVideoWrapper",
+      children: videoTrack ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_VideoTrack.default, {
+        track: videoTrack,
+        isLocal: true
+      }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: "Camera off"
+      })
+    })
+  });
 };
 
 LocalVideoPreview.propTypes = {};

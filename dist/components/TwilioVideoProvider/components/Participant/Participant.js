@@ -11,6 +11,8 @@ var _ParticipantInfo = _interopRequireDefault(require("../ParticipantInfo/Partic
 
 var _ParticipantTracks = _interopRequireDefault(require("../ParticipantTracks/ParticipantTracks"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Participant(_ref) {
@@ -24,16 +26,17 @@ function Participant(_ref) {
     hideParticipant
   } = _ref;
   if (!participant) return;
-  return /*#__PURE__*/_react.default.createElement(_ParticipantInfo.default, {
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_ParticipantInfo.default, {
     participant: participant,
     onClick: onClick,
     isSelected: isSelected,
     isLocalParticipant: isLocalParticipant,
-    hideParticipant: hideParticipant
-  }, /*#__PURE__*/_react.default.createElement(_ParticipantTracks.default, {
-    participant: participant,
-    videoOnly: videoOnly,
-    enableScreenShare: enableScreenShare,
-    isLocalParticipant: isLocalParticipant
-  }));
+    hideParticipant: hideParticipant,
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_ParticipantTracks.default, {
+      participant: participant,
+      videoOnly: videoOnly,
+      enableScreenShare: enableScreenShare,
+      isLocalParticipant: isLocalParticipant
+    })
+  });
 }

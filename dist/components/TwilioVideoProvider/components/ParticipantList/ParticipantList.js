@@ -23,6 +23,8 @@ var _Participant = _interopRequireDefault(require("../Participant/Participant"))
 
 var _usePublications = _interopRequireDefault(require("../../hooks/usePublications"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ParticipantList = props => {
@@ -76,29 +78,29 @@ const ParticipantList = props => {
     // display: 'flex',
     // }
     // }}>
-    _react.default.createElement("div", {
-      className: "participantsContainer ".concat(mobile ? 'mobile' : 'desktop')
-    }, /*#__PURE__*/_react.default.createElement(_Participant.default, {
-      participant: localParticipant,
-      isLocalParticipant: true,
-      isSelected: false // isSelected={localParticipant === selectedParticipant}
-      ,
-      onClick: () => setSelectedParticipant(localParticipant)
-    }), participants.map(participant => {
-      const isSelected = false; // participant === selectedParticipant;
+    (0, _jsxRuntime.jsxs)("div", {
+      className: "participantsContainer ".concat(mobile ? 'mobile' : 'desktop'),
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Participant.default, {
+        participant: localParticipant,
+        isLocalParticipant: true,
+        isSelected: false // isSelected={localParticipant === selectedParticipant}
+        ,
+        onClick: () => setSelectedParticipant(localParticipant)
+      }), participants.map(participant => {
+        const isSelected = false; // participant === selectedParticipant;
 
-      const hideParticipant = false; // participant === mainParticipant
-      // && participant !== screenShareParticipant && !isSelected;
+        const hideParticipant = false; // participant === mainParticipant
+        // && participant !== screenShareParticipant && !isSelected;
 
-      return /*#__PURE__*/_react.default.createElement(_Participant.default, {
-        enableScreenShare: true,
-        key: participant.sid,
-        participant: participant,
-        isSelected: isSelected,
-        onClick: () => setSelectedParticipant(participant),
-        hideParticipant: hideParticipant
-      });
-    })) // </div>
+        return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Participant.default, {
+          enableScreenShare: true,
+          participant: participant,
+          isSelected: isSelected,
+          onClick: () => setSelectedParticipant(participant),
+          hideParticipant: hideParticipant
+        }, participant.sid);
+      })]
+    }) // </div>
     //     </div>
     // </aside>
 

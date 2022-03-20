@@ -26,6 +26,8 @@ var _useScreenShareToggle = _interopRequireDefault(require("../hooks/useScreenSh
 
 var _SelectedParticipantProvider = require("./SelectedParticipantProvider");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -73,7 +75,7 @@ function VideoProvider(_ref) {
   const [isBackgroundSelectionOpen, setIsBackgroundSelectionOpen] = (0, _react.useState)(false); // const videoTrack = localTracks.find(track => !track.name.includes('screen') && track.kind === 'video');
   //   const [backgroundSettings, setBackgroundSettings] = useBackgroundSettings(videoTrack, room);
 
-  return /*#__PURE__*/_react.default.createElement(VideoContext.Provider, {
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(VideoContext.Provider, {
     value: {
       room,
       localTracks,
@@ -91,8 +93,10 @@ function VideoProvider(_ref) {
       setIsBackgroundSelectionOpen // backgroundSettings,
       // setBackgroundSettings,
 
-    }
-  }, /*#__PURE__*/_react.default.createElement(_SelectedParticipantProvider.SelectedParticipantProvider, {
-    room: room
-  }, children), /*#__PURE__*/_react.default.createElement(_AttachVisibilityHandler.default, null));
+    },
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectedParticipantProvider.SelectedParticipantProvider, {
+      room: room,
+      children: children
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_AttachVisibilityHandler.default, {})]
+  });
 }
